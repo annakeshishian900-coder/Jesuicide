@@ -1,0 +1,5124 @@
+SyntaxErrorNotification: End of statement expected ->
+15 September 2025 2:19:26.485872 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+FileCompilerRequestor>>notify:at:in:
+	Receiver: a FileCompilerRequestor
+	Arguments and temporary variables: 
+		message: 	'End of statement expected ->'
+		location: 	481
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		newSource: 	nil
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+		fileReference: 	nil
+		interactive: 	false
+
+
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						sel...etc...
+	Arguments and temporary variables: 
+		anArg: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ :exception | 
+			self compilationContext requestor
+...etc...
+		numArgs: 	1
+		receiver: 	an OpalCompiler
+
+
+Context>>evaluateSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+		value: 	nil
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+Context>>handleSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+SyntaxErrorNotification(Exception)>>signal
+	Receiver: SyntaxErrorNotification: End of statement expected
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		messageText: 	'End of statement expected'
+		tag: 	nil
+		signaler: 	a RBParser
+		signalContext: 	SyntaxErrorNotification(Exception)>>signal
+		handlerContext: 	FullBlockClosure(BlockClosure)>>on:do:
+		outerContext: 	nil
+		inClass: 	Object
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		doitFlag: 	false
+		location: 	481
+
+
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+	Receiver: SyntaxErrorNotification
+	Arguments and temporary variables: 
+		aClass: 	Object
+		codeString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please...etc...
+		doitFlag: 	false
+		errorString: 	'End of statement expected'
+		location: 	481
+		sourceCode: 	nil
+	Receiver's instance variables: 
+		superclass: 	Notification
+		methodDict: 	a MethodDictionary(#defaultAction->SyntaxErrorNotification>>#defaul...etc...
+		format: 	65546
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#SyntaxErrorNotification
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'OpalCompiler-Core-Exception'
+
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+DoItChunk>>importFor:logSource:
+	Receiver: a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show: 'Please enter a (the...etc...
+	Arguments and temporary variables: 
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+
+
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+		declaration: 	a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript sh...etc...
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show:...etc...
+	Arguments and temporary variables: 
+		aBlock: 	[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declara...etc...
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript...etc...
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aReference: 	a File
+		codeImporter: 	a CodeImporter
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ codeImporter evaluate ]
+	Arguments and temporary variables: 
+		exception: 	an ExceptionSet
+		handlerAction: 	[ :e | self handleError: e reference: aReference ]
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFile:
+		startpc: 	a CompiledBlock: [ codeImporter evaluate ]
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>handleErrorsDuring:reference:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aBlock: 	[ codeImporter evaluate ]
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		codeImporter: 	a CodeImporter
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		reference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a File)
+	Arguments and temporary variables: 
+		aBlock: 	[ :reference | 
+		self installSourceFile: reference ]
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a File)
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>ensure:
+	Receiver: [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	]
+	Arguments and temporary variables: 
+		aBlock: 	[ sourceFiles := nil ]
+		complete: 	nil
+		returnValue: 	nil
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFiles
+		startpc: 	a CompiledBlock: [ sourceFiles do: [ :reference | 
+		self installSourc...etc...
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>activate
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: STCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	CommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->STCommandLineHandler>>#activate #end-...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{EvaluateCommandLineHandler}
+		name: 	#STCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+
+--- The full stack ---
+FileCompilerRequestor>>notify:at:in:
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>cull:
+Context>>evaluateSignal:
+Context>>handleSignal:
+SyntaxErrorNotification(Exception)>>signal
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+DoItChunk>>importFor:logSource:
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+OrderedCollection>>do:
+CodeImporter>>evaluate
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+FullBlockClosure(BlockClosure)>>on:do:
+STCommandLineHandler>>handleErrorsDuring:reference:
+STCommandLineHandler>>installSourceFile:
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+OrderedCollection>>do:
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+FullBlockClosure(BlockClosure)>>ensure:
+STCommandLineHandler>>installSourceFiles
+STCommandLineHandler>>activate
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+ - - - - - - - - - - - - - - -  
+			- - - - - - - - - - - - - - - - - -
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+SyntaxErrorNotification: End of statement expected ->
+15 September 2025 2:20:07.53576 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+FileCompilerRequestor>>notify:at:in:
+	Receiver: a FileCompilerRequestor
+	Arguments and temporary variables: 
+		message: 	'End of statement expected ->'
+		location: 	481
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		newSource: 	nil
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+		fileReference: 	nil
+		interactive: 	false
+
+
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						sel...etc...
+	Arguments and temporary variables: 
+		anArg: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ :exception | 
+			self compilationContext requestor
+...etc...
+		numArgs: 	1
+		receiver: 	an OpalCompiler
+
+
+Context>>evaluateSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+		value: 	nil
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+Context>>handleSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+SyntaxErrorNotification(Exception)>>signal
+	Receiver: SyntaxErrorNotification: End of statement expected
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		messageText: 	'End of statement expected'
+		tag: 	nil
+		signaler: 	a RBParser
+		signalContext: 	SyntaxErrorNotification(Exception)>>signal
+		handlerContext: 	FullBlockClosure(BlockClosure)>>on:do:
+		outerContext: 	nil
+		inClass: 	Object
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		doitFlag: 	false
+		location: 	481
+
+
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+	Receiver: SyntaxErrorNotification
+	Arguments and temporary variables: 
+		aClass: 	Object
+		codeString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please...etc...
+		doitFlag: 	false
+		errorString: 	'End of statement expected'
+		location: 	481
+		sourceCode: 	nil
+	Receiver's instance variables: 
+		superclass: 	Notification
+		methodDict: 	a MethodDictionary(#defaultAction->SyntaxErrorNotification>>#defaul...etc...
+		format: 	65546
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#SyntaxErrorNotification
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'OpalCompiler-Core-Exception'
+
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+DoItChunk>>importFor:logSource:
+	Receiver: a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show: 'Please enter a (the...etc...
+	Arguments and temporary variables: 
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+
+
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+		declaration: 	a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript sh...etc...
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show:...etc...
+	Arguments and temporary variables: 
+		aBlock: 	[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declara...etc...
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript...etc...
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aReference: 	a File
+		codeImporter: 	a CodeImporter
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ codeImporter evaluate ]
+	Arguments and temporary variables: 
+		exception: 	an ExceptionSet
+		handlerAction: 	[ :e | self handleError: e reference: aReference ]
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFile:
+		startpc: 	a CompiledBlock: [ codeImporter evaluate ]
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>handleErrorsDuring:reference:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aBlock: 	[ codeImporter evaluate ]
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		codeImporter: 	a CodeImporter
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		reference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a File)
+	Arguments and temporary variables: 
+		aBlock: 	[ :reference | 
+		self installSourceFile: reference ]
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a File)
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>ensure:
+	Receiver: [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	]
+	Arguments and temporary variables: 
+		aBlock: 	[ sourceFiles := nil ]
+		complete: 	nil
+		returnValue: 	nil
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFiles
+		startpc: 	a CompiledBlock: [ sourceFiles do: [ :reference | 
+		self installSourc...etc...
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>activate
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: STCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	CommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->STCommandLineHandler>>#activate #end-...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{EvaluateCommandLineHandler}
+		name: 	#STCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+
+--- The full stack ---
+FileCompilerRequestor>>notify:at:in:
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>cull:
+Context>>evaluateSignal:
+Context>>handleSignal:
+SyntaxErrorNotification(Exception)>>signal
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+DoItChunk>>importFor:logSource:
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+OrderedCollection>>do:
+CodeImporter>>evaluate
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+FullBlockClosure(BlockClosure)>>on:do:
+STCommandLineHandler>>handleErrorsDuring:reference:
+STCommandLineHandler>>installSourceFile:
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+OrderedCollection>>do:
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+FullBlockClosure(BlockClosure)>>ensure:
+STCommandLineHandler>>installSourceFiles
+STCommandLineHandler>>activate
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+ - - - - - - - - - - - - - - -  
+			- - - - - - - - - - - - - - - - - -
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+SyntaxErrorNotification: End of statement expected ->
+15 September 2025 2:20:23.671117 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+FileCompilerRequestor>>notify:at:in:
+	Receiver: a FileCompilerRequestor
+	Arguments and temporary variables: 
+		message: 	'End of statement expected ->'
+		location: 	481
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		newSource: 	nil
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+		fileReference: 	nil
+		interactive: 	false
+
+
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						sel...etc...
+	Arguments and temporary variables: 
+		anArg: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ :exception | 
+			self compilationContext requestor
+...etc...
+		numArgs: 	1
+		receiver: 	an OpalCompiler
+
+
+Context>>evaluateSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+		value: 	nil
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+Context>>handleSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+SyntaxErrorNotification(Exception)>>signal
+	Receiver: SyntaxErrorNotification: End of statement expected
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		messageText: 	'End of statement expected'
+		tag: 	nil
+		signaler: 	a RBParser
+		signalContext: 	SyntaxErrorNotification(Exception)>>signal
+		handlerContext: 	FullBlockClosure(BlockClosure)>>on:do:
+		outerContext: 	nil
+		inClass: 	Object
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		doitFlag: 	false
+		location: 	481
+
+
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+	Receiver: SyntaxErrorNotification
+	Arguments and temporary variables: 
+		aClass: 	Object
+		codeString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please...etc...
+		doitFlag: 	false
+		errorString: 	'End of statement expected'
+		location: 	481
+		sourceCode: 	nil
+	Receiver's instance variables: 
+		superclass: 	Notification
+		methodDict: 	a MethodDictionary(#defaultAction->SyntaxErrorNotification>>#defaul...etc...
+		format: 	65546
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#SyntaxErrorNotification
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'OpalCompiler-Core-Exception'
+
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+DoItChunk>>importFor:logSource:
+	Receiver: a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show: 'Please enter a (the...etc...
+	Arguments and temporary variables: 
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+
+
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+		declaration: 	a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript sh...etc...
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show:...etc...
+	Arguments and temporary variables: 
+		aBlock: 	[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declara...etc...
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript...etc...
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aReference: 	a File
+		codeImporter: 	a CodeImporter
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ codeImporter evaluate ]
+	Arguments and temporary variables: 
+		exception: 	an ExceptionSet
+		handlerAction: 	[ :e | self handleError: e reference: aReference ]
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFile:
+		startpc: 	a CompiledBlock: [ codeImporter evaluate ]
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>handleErrorsDuring:reference:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aBlock: 	[ codeImporter evaluate ]
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		codeImporter: 	a CodeImporter
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		reference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a File)
+	Arguments and temporary variables: 
+		aBlock: 	[ :reference | 
+		self installSourceFile: reference ]
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a File)
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>ensure:
+	Receiver: [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	]
+	Arguments and temporary variables: 
+		aBlock: 	[ sourceFiles := nil ]
+		complete: 	nil
+		returnValue: 	nil
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFiles
+		startpc: 	a CompiledBlock: [ sourceFiles do: [ :reference | 
+		self installSourc...etc...
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>activate
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: STCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	CommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->STCommandLineHandler>>#activate #end-...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{EvaluateCommandLineHandler}
+		name: 	#STCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+
+--- The full stack ---
+FileCompilerRequestor>>notify:at:in:
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>cull:
+Context>>evaluateSignal:
+Context>>handleSignal:
+SyntaxErrorNotification(Exception)>>signal
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+DoItChunk>>importFor:logSource:
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+OrderedCollection>>do:
+CodeImporter>>evaluate
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+FullBlockClosure(BlockClosure)>>on:do:
+STCommandLineHandler>>handleErrorsDuring:reference:
+STCommandLineHandler>>installSourceFile:
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+OrderedCollection>>do:
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+FullBlockClosure(BlockClosure)>>ensure:
+STCommandLineHandler>>installSourceFiles
+STCommandLineHandler>>activate
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+ - - - - - - - - - - - - - - -  
+			- - - - - - - - - - - - - - - - - -
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+SyntaxErrorNotification: End of statement expected ->
+15 September 2025 2:20:38.932433 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+FileCompilerRequestor>>notify:at:in:
+	Receiver: a FileCompilerRequestor
+	Arguments and temporary variables: 
+		message: 	'End of statement expected ->'
+		location: 	481
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		newSource: 	nil
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+		fileReference: 	nil
+		interactive: 	false
+
+
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						sel...etc...
+	Arguments and temporary variables: 
+		anArg: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ :exception | 
+			self compilationContext requestor
+...etc...
+		numArgs: 	1
+		receiver: 	an OpalCompiler
+
+
+Context>>evaluateSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+		value: 	nil
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+Context>>handleSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+SyntaxErrorNotification(Exception)>>signal
+	Receiver: SyntaxErrorNotification: End of statement expected
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		messageText: 	'End of statement expected'
+		tag: 	nil
+		signaler: 	a RBParser
+		signalContext: 	SyntaxErrorNotification(Exception)>>signal
+		handlerContext: 	FullBlockClosure(BlockClosure)>>on:do:
+		outerContext: 	nil
+		inClass: 	Object
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		doitFlag: 	false
+		location: 	481
+
+
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+	Receiver: SyntaxErrorNotification
+	Arguments and temporary variables: 
+		aClass: 	Object
+		codeString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please...etc...
+		doitFlag: 	false
+		errorString: 	'End of statement expected'
+		location: 	481
+		sourceCode: 	nil
+	Receiver's instance variables: 
+		superclass: 	Notification
+		methodDict: 	a MethodDictionary(#defaultAction->SyntaxErrorNotification>>#defaul...etc...
+		format: 	65546
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#SyntaxErrorNotification
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'OpalCompiler-Core-Exception'
+
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+DoItChunk>>importFor:logSource:
+	Receiver: a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show: 'Please enter a (the...etc...
+	Arguments and temporary variables: 
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+
+
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+		declaration: 	a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript sh...etc...
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show:...etc...
+	Arguments and temporary variables: 
+		aBlock: 	[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declara...etc...
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript...etc...
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aReference: 	a File
+		codeImporter: 	a CodeImporter
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ codeImporter evaluate ]
+	Arguments and temporary variables: 
+		exception: 	an ExceptionSet
+		handlerAction: 	[ :e | self handleError: e reference: aReference ]
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFile:
+		startpc: 	a CompiledBlock: [ codeImporter evaluate ]
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>handleErrorsDuring:reference:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aBlock: 	[ codeImporter evaluate ]
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		codeImporter: 	a CodeImporter
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		reference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a File)
+	Arguments and temporary variables: 
+		aBlock: 	[ :reference | 
+		self installSourceFile: reference ]
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a File)
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>ensure:
+	Receiver: [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	]
+	Arguments and temporary variables: 
+		aBlock: 	[ sourceFiles := nil ]
+		complete: 	nil
+		returnValue: 	nil
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFiles
+		startpc: 	a CompiledBlock: [ sourceFiles do: [ :reference | 
+		self installSourc...etc...
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>activate
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: STCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	CommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->STCommandLineHandler>>#activate #end-...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{EvaluateCommandLineHandler}
+		name: 	#STCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+
+--- The full stack ---
+FileCompilerRequestor>>notify:at:in:
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>cull:
+Context>>evaluateSignal:
+Context>>handleSignal:
+SyntaxErrorNotification(Exception)>>signal
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+DoItChunk>>importFor:logSource:
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+OrderedCollection>>do:
+CodeImporter>>evaluate
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+FullBlockClosure(BlockClosure)>>on:do:
+STCommandLineHandler>>handleErrorsDuring:reference:
+STCommandLineHandler>>installSourceFile:
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+OrderedCollection>>do:
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+FullBlockClosure(BlockClosure)>>ensure:
+STCommandLineHandler>>installSourceFiles
+STCommandLineHandler>>activate
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+ - - - - - - - - - - - - - - -  
+			- - - - - - - - - - - - - - - - - -
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+SyntaxErrorNotification: End of statement expected ->
+15 September 2025 2:20:58.111925 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+FileCompilerRequestor>>notify:at:in:
+	Receiver: a FileCompilerRequestor
+	Arguments and temporary variables: 
+		message: 	'End of statement expected ->'
+		location: 	481
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		newSource: 	nil
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+		fileReference: 	nil
+		interactive: 	false
+
+
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						sel...etc...
+	Arguments and temporary variables: 
+		anArg: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ :exception | 
+			self compilationContext requestor
+...etc...
+		numArgs: 	1
+		receiver: 	an OpalCompiler
+
+
+Context>>evaluateSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+		value: 	nil
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+Context>>handleSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+SyntaxErrorNotification(Exception)>>signal
+	Receiver: SyntaxErrorNotification: End of statement expected
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		messageText: 	'End of statement expected'
+		tag: 	nil
+		signaler: 	a RBParser
+		signalContext: 	SyntaxErrorNotification(Exception)>>signal
+		handlerContext: 	FullBlockClosure(BlockClosure)>>on:do:
+		outerContext: 	nil
+		inClass: 	Object
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		doitFlag: 	false
+		location: 	481
+
+
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+	Receiver: SyntaxErrorNotification
+	Arguments and temporary variables: 
+		aClass: 	Object
+		codeString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please...etc...
+		doitFlag: 	false
+		errorString: 	'End of statement expected'
+		location: 	481
+		sourceCode: 	nil
+	Receiver's instance variables: 
+		superclass: 	Notification
+		methodDict: 	a MethodDictionary(#defaultAction->SyntaxErrorNotification>>#defaul...etc...
+		format: 	65546
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#SyntaxErrorNotification
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'OpalCompiler-Core-Exception'
+
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+DoItChunk>>importFor:logSource:
+	Receiver: a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show: 'Please enter a (the...etc...
+	Arguments and temporary variables: 
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+
+
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+		declaration: 	a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript sh...etc...
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show:...etc...
+	Arguments and temporary variables: 
+		aBlock: 	[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declara...etc...
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript...etc...
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aReference: 	a File
+		codeImporter: 	a CodeImporter
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ codeImporter evaluate ]
+	Arguments and temporary variables: 
+		exception: 	an ExceptionSet
+		handlerAction: 	[ :e | self handleError: e reference: aReference ]
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFile:
+		startpc: 	a CompiledBlock: [ codeImporter evaluate ]
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>handleErrorsDuring:reference:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aBlock: 	[ codeImporter evaluate ]
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		codeImporter: 	a CodeImporter
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		reference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a File)
+	Arguments and temporary variables: 
+		aBlock: 	[ :reference | 
+		self installSourceFile: reference ]
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a File)
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>ensure:
+	Receiver: [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	]
+	Arguments and temporary variables: 
+		aBlock: 	[ sourceFiles := nil ]
+		complete: 	nil
+		returnValue: 	nil
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFiles
+		startpc: 	a CompiledBlock: [ sourceFiles do: [ :reference | 
+		self installSourc...etc...
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>activate
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: STCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	CommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->STCommandLineHandler>>#activate #end-...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{EvaluateCommandLineHandler}
+		name: 	#STCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+
+--- The full stack ---
+FileCompilerRequestor>>notify:at:in:
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>cull:
+Context>>evaluateSignal:
+Context>>handleSignal:
+SyntaxErrorNotification(Exception)>>signal
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+DoItChunk>>importFor:logSource:
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+OrderedCollection>>do:
+CodeImporter>>evaluate
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+FullBlockClosure(BlockClosure)>>on:do:
+STCommandLineHandler>>handleErrorsDuring:reference:
+STCommandLineHandler>>installSourceFile:
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+OrderedCollection>>do:
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+FullBlockClosure(BlockClosure)>>ensure:
+STCommandLineHandler>>installSourceFiles
+STCommandLineHandler>>activate
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+ - - - - - - - - - - - - - - -  
+			- - - - - - - - - - - - - - - - - -
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+SyntaxErrorNotification: End of statement expected ->
+15 September 2025 2:21:19.527522 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+FileCompilerRequestor>>notify:at:in:
+	Receiver: a FileCompilerRequestor
+	Arguments and temporary variables: 
+		message: 	'End of statement expected ->'
+		location: 	481
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		newSource: 	nil
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+		fileReference: 	nil
+		interactive: 	false
+
+
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						sel...etc...
+	Arguments and temporary variables: 
+		anArg: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ :exception | 
+			self compilationContext requestor
+...etc...
+		numArgs: 	1
+		receiver: 	an OpalCompiler
+
+
+Context>>evaluateSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+		value: 	nil
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+Context>>handleSignal:
+	Receiver: FullBlockClosure(BlockClosure)>>on:do:
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification: End of statement expected
+	Receiver's instance variables: 
+		sender: 	OpalCompiler>>evaluate
+		pc: 	30
+		stackp: 	2
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ])...etc...
+
+
+SyntaxErrorNotification(Exception)>>signal
+	Receiver: SyntaxErrorNotification: End of statement expected
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		messageText: 	'End of statement expected'
+		tag: 	nil
+		signaler: 	a RBParser
+		signalContext: 	SyntaxErrorNotification(Exception)>>signal
+		handlerContext: 	FullBlockClosure(BlockClosure)>>on:do:
+		outerContext: 	nil
+		inClass: 	Object
+		code: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please enter...etc...
+		doitFlag: 	false
+		location: 	481
+
+
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+	Receiver: SyntaxErrorNotification
+	Arguments and temporary variables: 
+		aClass: 	Object
+		codeString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please...etc...
+		doitFlag: 	false
+		errorString: 	'End of statement expected'
+		location: 	481
+		sourceCode: 	nil
+	Receiver's instance variables: 
+		superclass: 	Notification
+		methodDict: 	a MethodDictionary(#defaultAction->SyntaxErrorNotification>>#defaul...etc...
+		format: 	65546
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#SyntaxErrorNotification
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'OpalCompiler-Core-Exception'
+
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+DoItChunk>>importFor:logSource:
+	Receiver: a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show: 'Please enter a (the...etc...
+	Arguments and temporary variables: 
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+	Receiver's instance variables: 
+		contents: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please e...etc...
+
+
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+		declaration: 	a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript sh...etc...
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript show:...etc...
+	Arguments and temporary variables: 
+		aBlock: 	[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declara...etc...
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a DoItChunk(| a b c d answer1 answer2 linearAnswer |
+Transcript...etc...
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+CodeImporter>>evaluate
+	Receiver: a CodeImporter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		readStream: 	a ZnCharacterReadStream
+		codeDeclarations: 	an OrderedCollection(a DoItChunk(| a b c d answer1 answer2 li...etc...
+		parserClass: 	ChunkFileFormatParser
+		requestor: 	a FileCompilerRequestor
+		logSource: 	true
+
+
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aReference: 	a File
+		codeImporter: 	a CodeImporter
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ codeImporter evaluate ]
+	Arguments and temporary variables: 
+		exception: 	an ExceptionSet
+		handlerAction: 	[ :e | self handleError: e reference: aReference ]
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFile:
+		startpc: 	a CompiledBlock: [ codeImporter evaluate ]
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>handleErrorsDuring:reference:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		aBlock: 	[ codeImporter evaluate ]
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>installSourceFile:
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		codeImporter: 	a CodeImporter
+		aReference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+		reference: 	a File
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+OrderedCollection>>do:
+	Receiver: an OrderedCollection(a File)
+	Arguments and temporary variables: 
+		aBlock: 	[ :reference | 
+		self installSourceFile: reference ]
+		index: 	1
+	Receiver's instance variables: 
+		array: 	an Array(a File)
+		firstIndex: 	1
+		lastIndex: 	1
+
+
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+FullBlockClosure(BlockClosure)>>ensure:
+	Receiver: [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	]
+	Arguments and temporary variables: 
+		aBlock: 	[ sourceFiles := nil ]
+		complete: 	nil
+		returnValue: 	nil
+	Receiver's instance variables: 
+		outerContext: 	STCommandLineHandler>>installSourceFiles
+		startpc: 	a CompiledBlock: [ sourceFiles do: [ :reference | 
+		self installSourc...etc...
+		numArgs: 	0
+		receiver: 	a STCommandLineHandler
+
+
+STCommandLineHandler>>installSourceFiles
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler>>activate
+	Receiver: a STCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	an OrderedCollection(a File)
+
+
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: STCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	CommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->STCommandLineHandler>>#activate #end-...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{EvaluateCommandLineHandler}
+		name: 	#STCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	STCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+
+--- The full stack ---
+FileCompilerRequestor>>notify:at:in:
+[ :exception | 
+			self compilationContext requestor
+                ifNotNil: [
+						self compilationContext requestor 
+							notify: exception errorMessage , ' ->'
+							at: exception location
+							in: exception errorCode.
+                    self compilationContext failBlock value ]
+                ifNil: [ exception pass ]] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>cull:
+Context>>evaluateSignal:
+Context>>handleSignal:
+SyntaxErrorNotification(Exception)>>signal
+SyntaxErrorNotification class>>inClass:withCode:doitFlag:errorMessage:location:
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+DoItChunk>>importFor:logSource:
+[ :declaration |
+		requestor ifNotNil: [
+			requestor contents: declaration contents ].
+		value := declaration importFor: requestor logSource: logSource  ] in CodeImporter>>evaluate
+OrderedCollection>>do:
+CodeImporter>>evaluate
+[ codeImporter evaluate ] in STCommandLineHandler>>installSourceFile:
+FullBlockClosure(BlockClosure)>>on:do:
+STCommandLineHandler>>handleErrorsDuring:reference:
+STCommandLineHandler>>installSourceFile:
+[ :reference | 
+		self installSourceFile: reference ] in [ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+OrderedCollection>>do:
+[ sourceFiles do: [ :reference | 
+		self installSourceFile: reference ]
+	] in STCommandLineHandler>>installSourceFiles
+FullBlockClosure(BlockClosure)>>ensure:
+STCommandLineHandler>>installSourceFiles
+STCommandLineHandler>>activate
+STCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+ - - - - - - - - - - - - - - -  
+			- - - - - - - - - - - - - - - - - -
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+SyntaxErrorNotification: End of statement expected
+15 September 2025 2:23:13.886198 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>evaluate:
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		textOrString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Plea...etc...
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ 
+	result := Smalltalk compiler evaluate: aStream.
+	self hasSessionChanged
+		ifFalse: [ 
+			self stdout
+				print: result;
+				lf ] ] in EvaluateCommandLineHandler>>evaluate:
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		aStream: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		result: 	nil
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ 
+	result := Smalltalk compiler evaluate: aStream.
+	self hasSessionChanged
+		ifFalse: [ 
+...etc...
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :error | self handleError: error ]
+	Receiver's instance variables: 
+		outerContext: 	EvaluateCommandLineHandler>>evaluate:
+		startpc: 	a CompiledBlock: [ 
+	result := Smalltalk compiler evaluate: aStream.
+	...etc...
+		numArgs: 	0
+		receiver: 	an EvaluateCommandLineHandler
+
+
+EvaluateCommandLineHandler>>evaluate:
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		result: 	nil
+		aStream: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+EvaluateCommandLineHandler>>evaluateArguments
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		argumentString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Pl...etc...
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+EvaluateCommandLineHandler>>activate
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+EvaluateCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	STCommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->EvaluateCommandLineHandler>>#activate...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#EvaluateCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	EvaluateCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	EvaluateCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		handlers: 	an OrderedCollection(EvaluateCommandLineHandler)
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aString: 	'eval'
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ self handleArgument: self firstArgument ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit | 
+			"If the command line is protected by password, we ...etc...
+	Receiver's instance variables: 
+		outerContext: 	[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ ...etc...
+		startpc: 	a CompiledBlock: [ self handleArgument: self firstArgument ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+	Receiver: [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the comma...etc...
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activate
+		startpc: 	a CompiledBlock: [ [ self handleArgument: self firstArgument ]
+		on: E...etc...
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+
+--- The full stack ---
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+OpalCompiler>>evaluate:
+[ 
+	result := Smalltalk compiler evaluate: aStream.
+	self hasSessionChanged
+		ifFalse: [ 
+			self stdout
+				print: result;
+				lf ] ] in EvaluateCommandLineHandler>>evaluate:
+FullBlockClosure(BlockClosure)>>on:do:
+EvaluateCommandLineHandler>>evaluate:
+EvaluateCommandLineHandler>>evaluateArguments
+EvaluateCommandLineHandler>>activate
+EvaluateCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+SyntaxErrorNotification: End of statement expected
+15 September 2025 2:24:41.240215 am
+
+VM: unix - x86_64 - linux-gnu - CoInterpreter VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 97a2c5d3-7db4-0d00-9da7-39dc08c6380e Mar 30 2023
+v9.0.22 - Commit: 421845e - Date: 2023-03-30 09:49:26 +0200
+
+Image: Pharo9.0.0 [Build information: Pharo-9.0.0+build.1580.sha.e1bb0fb7b6c4aaadd5106d19b58633c94dff1b69 (64 Bit)]
+
+RBParser>>parserError:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		aString: 	'End of statement expected'
+		errorNode: 	nil
+		errorMessage: 	'End of statement expected'
+		errorPosition: 	481
+		newSource: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		statementList: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please e...etc...
+		periods: 	an OrderedCollection(169 305 433)
+		aCollectionOfClosers: 	#()
+		returnPosition: 	nil
+		node: 	RBAssignmentNode(c1 := FileStream stdin nextLine asNumber a)
+		startOfStatementToken: 	 RBIdentifierToken('c1')
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		sequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcrip...etc...
+		aCollectionOfClosers: 	#()
+		statements: 	an OrderedCollection(RBCascadeNode(Transcript
+	show:
+		'Please ente...etc...
+		return: 	false
+		periods: 	an OrderedCollection(169 305 433)
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:into:untilAnyCloserOf:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+		aSequenceNode: 	RBSequenceNode(| a b c d answer1 answer2 linearAnswer |
+Transcri...etc...
+		aCollectionOfClosers: 	#()
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseStatements:
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		pragmaBoolean: 	false
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser>>parseExpression
+	Receiver: a RBParser
+	Arguments and temporary variables: 
+		node: 	nil
+	Receiver's instance variables: 
+		scanner: 	a RBScanner
+		currentToken: 	 RBAssignmentToken
+		nextToken: 	nil
+		errorBlock: 	nil
+		source: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please ent...etc...
+		comments: 	an OrderedCollection()
+		pragmas: 	nil
+
+
+RBParser class>>parseExpression:onError:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		aBlock: 	nil
+		node: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+RBParser class>>parseExpression:
+	Receiver: RBParser
+	Arguments and temporary variables: 
+		aString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#addCommentsTo:->RBParser>>#addCommentsTo: #addP...etc...
+		format: 	65543
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{RBPatternParser}
+		name: 	#RBParser
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'AST-Core-Parser'
+
+
+OpalCompiler>>parseExpression
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>parseDoIt
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>compileDoit
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		cm: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self ...etc...
+	Arguments and temporary variables: 
+		exception: 	SyntaxErrorNotification
+		handlerAction: 	[ :exception | 
+			self compilationContext requestor
+           ...etc...
+	Receiver's instance variables: 
+		outerContext: 	OpalCompiler>>evaluate
+		startpc: 	a CompiledBlock: [ receiver withArgs: (context ifNil: [ #() ] ifNotNil...etc...
+		numArgs: 	0
+		receiver: 	an OpalCompiler
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+OpalCompiler>>evaluate:
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		textOrString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Plea...etc...
+	Receiver's instance variables: 
+		ast: 	nil
+		source: 	a ReadStream
+		context: 	nil
+		receiver: 	nil
+		compilationContext: 	a CompilationContext
+		compilationContextClass: 	nil
+
+
+[ 
+	result := Smalltalk compiler evaluate: aStream.
+	self hasSessionChanged
+		ifFalse: [ 
+			self stdout
+				print: result;
+				lf ] ] in EvaluateCommandLineHandler>>evaluate:
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		aStream: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+		result: 	nil
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ 
+	result := Smalltalk compiler evaluate: aStream.
+	self hasSessionChanged
+		ifFalse: [ 
+...etc...
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :error | self handleError: error ]
+	Receiver's instance variables: 
+		outerContext: 	EvaluateCommandLineHandler>>evaluate:
+		startpc: 	a CompiledBlock: [ 
+	result := Smalltalk compiler evaluate: aStream.
+	...etc...
+		numArgs: 	0
+		receiver: 	an EvaluateCommandLineHandler
+
+
+EvaluateCommandLineHandler>>evaluate:
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		result: 	nil
+		aStream: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Please en...etc...
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+EvaluateCommandLineHandler>>evaluateArguments
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		argumentString: 	'| a b c d answer1 answer2 linearAnswer |
+Transcript show: ''Pl...etc...
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+EvaluateCommandLineHandler>>activate
+	Receiver: an EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+		sourceFiles: 	nil
+
+
+EvaluateCommandLineHandler class(CommandLineHandler class)>>activateWith:
+	Receiver: EvaluateCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLine: 	a CommandLineArguments
+	Receiver's instance variables: 
+		superclass: 	STCommandLineHandler
+		methodDict: 	a MethodDictionary(#activate->EvaluateCommandLineHandler>>#activate...etc...
+		format: 	65541
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#EvaluateCommandLineHandler
+		classPool: 	a Dictionary()
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'CodeImportCommandLineHandlers-Base'
+
+
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	EvaluateCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ aCommandLinehandler activateWith: commandLine ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit |
+		^ self handleExit: exit for: aCommandLinehandler ]
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubComm...etc...
+		startpc: 	a CompiledBlock: [ aCommandLinehandler activateWith: commandLine ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aCommandLinehandler: 	EvaluateCommandLineHandler
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		handlers: 	an OrderedCollection(EvaluateCommandLineHandler)
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+		aString: 	'eval'
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ self handleArgument: self firstArgument ]
+	Arguments and temporary variables: 
+		exception: 	Exit
+		handlerAction: 	[ :exit | 
+			"If the command line is protected by password, we ...etc...
+	Receiver's instance variables: 
+		outerContext: 	[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ ...etc...
+		startpc: 	a CompiledBlock: [ self handleArgument: self firstArgument ]
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+	Receiver: a PharoCommandLineHandler
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		commandLine: 	a CommandLineArguments
+		session: 	a WorkingSession
+		stdout: 	a VTermOutputDriver
+		stderr: 	a VTermOutputDriver
+
+
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
+	Receiver: [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the comma...etc...
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		outerContext: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activate
+		startpc: 	a CompiledBlock: [ [ self handleArgument: self firstArgument ]
+		on: E...etc...
+		numArgs: 	0
+		receiver: 	a PharoCommandLineHandler
+
+
+
+--- The full stack ---
+RBParser>>parserError:
+RBParser>>parseStatementInto:periodList:withAcceptedStatementClosers:
+RBParser>>parseStatementList:into:untilAnyCloserOf:
+RBParser>>parseStatements:into:untilAnyCloserOf:
+RBParser>>parseStatements:
+RBParser>>parseExpression
+RBParser class>>parseExpression:onError:
+RBParser class>>parseExpression:
+OpalCompiler>>parseExpression
+OpalCompiler>>parseDoIt
+OpalCompiler>>compileDoit
+[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate
+FullBlockClosure(BlockClosure)>>on:do:
+OpalCompiler>>evaluate
+OpalCompiler>>evaluate:
+[ 
+	result := Smalltalk compiler evaluate: aStream.
+	self hasSessionChanged
+		ifFalse: [ 
+			self stdout
+				print: result;
+				lf ] ] in EvaluateCommandLineHandler>>evaluate:
+FullBlockClosure(BlockClosure)>>on:do:
+EvaluateCommandLineHandler>>evaluate:
+EvaluateCommandLineHandler>>evaluateArguments
+EvaluateCommandLineHandler>>activate
+EvaluateCommandLineHandler class(CommandLineHandler class)>>activateWith:
+[ aCommandLinehandler activateWith: commandLine ] in PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+FullBlockClosure(BlockClosure)>>on:do:
+PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleSubcommand
+PharoCommandLineHandler(BasicCommandLineHandler)>>handleArgument:
+[ self handleArgument: self firstArgument ] in [ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+FullBlockClosure(BlockClosure)>>on:do:
+[ [ self handleArgument: self firstArgument ]
+		on: Exit
+		do: [ :exit | 
+			"If the command line is protected by password, we just exit the image because in non-headless mode the handleExit will let the image open. If the password protection is enabled, it is to avoid to let the access to the image."
+			self class commandLinePasswordManager hasPasswordSet
+				ifTrue: [ Smalltalk snapshot: false andQuit: true ].
+			self handleExit: exit ] ] in BasicCommandLineHandler>>activate
+[self value.
+			Processor terminateActive] in FullBlockClosure(BlockClosure)>>newProcess
